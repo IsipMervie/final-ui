@@ -4,7 +4,7 @@ import { formatDistanceToNow } from "date-fns";
 import "./App.css";
 
 // ✅ Update this with your actual deployed backend URL from Render
-const BACKEND_URL = "https://your-backend-service.onrender.com/posts";
+const BACKEND_URL = "https://final-api-ryvo.onrender.com/posts";
 
 function App() {
   const [posts, setPosts] = useState([]);
