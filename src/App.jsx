@@ -214,7 +214,7 @@ function App() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch("http://localhost:8080/posts");
+        const response = await fetch("https://final-api-ryvo.onrender.com/posts");
         const data = await response.json();
         setPosts(data);
       } catch (error) {
@@ -267,7 +267,7 @@ function App() {
     };
 
     try {
-      const response = await fetch("http://localhost:8080/posts", {
+      const response = await fetch("https://final-api-ryvo.onrender.com/posts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -311,7 +311,7 @@ function App() {
 
   const editPost = async (id, updatedPost) => {
     try {
-      const response = await fetch(`http://localhost:8080/posts/${id}`, {
+      const response = await fetch(`https://final-api-ryvo.onrender.com/posts/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"
@@ -328,7 +328,7 @@ function App() {
 
   const deletePost = async (id) => {
     try {
-      await fetch(`http://localhost:8080/posts/${id}`, {
+      await fetch(`https://final-api-ryvo.onrender.com/posts/${id}`, {
         method: "DELETE",
       });
       setPosts(prevPosts => prevPosts.filter(post => post.id !== id));
@@ -340,7 +340,7 @@ function App() {
 
   const likePost = async (id) => {
     try {
-      const response = await fetch(`http://localhost:8080/posts/${id}/like`, {
+      const response = await fetch(`https://final-api-ryvo.onrender.com/posts/${id}/like`, {
         method: "PUT",
       });
       const data = await response.json();
@@ -355,7 +355,7 @@ function App() {
 
   const sharePost = async (id) => {
     try {
-      const response = await fetch(`http://localhost:8080/posts/${id}/share`, {
+      const response = await fetch(`https://final-api-ryvo.onrender.com/posts/${id}/share`, {
         method: "PUT",
       });
       const data = await response.json();
@@ -370,7 +370,7 @@ function App() {
 
   const commentOnPost = async (id, commentText) => {
     try {
-      const response = await fetch(`http://localhost:8080/posts/${id}/comment`, {
+      const response = await fetch(`https://final-api-ryvo.onrender.com/posts/${id}/comment`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"
